@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+{% block header %}
+{% endblock %}
+
+<!--Posts should go here-->
+{% for post in posts %}
+<h2>{{post['subject']}}</h2>
+<h3> by: {{post['name']}}</h3>
+<p>{{post['post']}}</p>
+{% endfor %}
+
+<div id="postsSection"></div>
+<div id="post">
+    <label>Name:</label><br />
+    <input id="name" />
+    <br />
+    <label>Subject:</label>><br />
+    <input id="subject" />
+    <br />
+    <label>Post:</label><br />
+    <textarea id="para" cols="50" rows="10"></textarea>
+    <br />
+    <!--Button should go here-->
+    {% block button %}
+    {% endblock %}
+</div>
+
+{% endblock %}
